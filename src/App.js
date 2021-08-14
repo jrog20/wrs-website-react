@@ -1,25 +1,52 @@
-import logo from './logo.svg';
+import React, { Component } from 'react';
 import './App.css';
+import NavBar from './components/NavBar';
+import HomeContainer from './containers/HomeContainer';
+import About from './components/About';
+import Services from './components/Services';
+import Contact from './components/Contact';
+import LoginContainer from './containers/LoginContainer';
+import NotFound from './components/NotFound';
+import Footer from './components/Footer';
+// Switch allows only one route to show at a time
+import { Switch, Route } from 'react-router-dom';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+// ADDED
+import { getCurrentUser } from "./actions/currentUser.js"
+import { connect } from 'react-redux';
+
+class App extends Component {
+  
+  // ADDED
+  componentDidMount() {
+    this.props.getCurrentUser()
+  }
+
+  render() {
+    const { loggedIn } = this.props
+    return (
+      <div className='App'>
+        {/* { loggedIn ? <LoginContainer currentUser={this.props.currentUser} /> : <HomeContainer />} */}
+        <NavBar />
+        <Switch>
+          <Route exact path="/" component={HomeContainer} />
+          <Route exact path="/about" component={About} />
+          <Route exact path="/services" component={Services} />
+          <Route exact path="/contact" component={Contact} />
+          <Route exact path="/login" component={LoginContainer} />
+          <Route component={NotFound} />
+        </Switch>
+        <Footer />
+      </div>
+    );
+  }
+}  
+
+const mapStateToProps = state => {
+  return ({
+    loggedIn: !!state.currentUser
+    // currentUser: state.currentUser
+  })
 }
 
-export default App;
+export default connect(mapStateToProps, { getCurrentUser })(App);
