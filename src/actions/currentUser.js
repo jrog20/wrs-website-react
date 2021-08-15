@@ -1,7 +1,9 @@
 import { resetLoginForm } from "./loginForm.js"
 
 // synchronous action creators
-export const setCurrentUser = ({user}) => {
+export const setCurrentUser = user => {
+  
+  console.log(user)
   return {
     type: "SET_CURRENT_USER",
     user
@@ -30,14 +32,14 @@ export const getCurrentUser = () => {
         alert(resp.error)
       } else {
         console.log(resp)
-        dispatch(setCurrentUser(resp))
+        dispatch(setCurrentUser(resp.user))
       }
     })
     .catch(console.log)
   }
 }
 
-export const login = (credentials, history) => {
+export const login = (credentials) => {
   return dispatch => {
     return fetch("http://localhost:3001/login", {
       credentials: "include",
@@ -49,12 +51,13 @@ export const login = (credentials, history) => {
     })
       .then(r => r.json())
       .then(response => {
+        console.log(response)
         if (response.error) {
           alert(response.error)
         } else {
+          console.log(response)
           dispatch(setCurrentUser(response))
           dispatch(resetLoginForm())
-          history.push('/')
         }
       })
       .catch(console.log)

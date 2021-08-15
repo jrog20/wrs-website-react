@@ -1,12 +1,19 @@
 import React from 'react';
 import rogerriding from '../assets/images/rogerriding.jpeg';
 
-function Login({ loginFormData, handleOnChange, handleOnSubmit, email, password }) {
+function Login({ loginFormData, handleOnChange, handleOnSubmit, email, password, username }) {
   return (
     <>
       <div className='background-image' style={{ backgroundImage: `url(${rogerriding})` }} alt="Login">
       {/* <LoginForm /> */}
         <form onSubmit={handleOnSubmit}>
+          {/* <input 
+            type="text" 
+            name="username" 
+            placeholder="username" 
+            value={username}
+            onChange={handleOnChange}
+          /><br/> */}
           <input 
             type="text" 
             name="email" 

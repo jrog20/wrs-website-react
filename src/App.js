@@ -23,7 +23,7 @@ class App extends Component {
   }
 
   render() {
-    const { loggedIn } = this.props
+    // const { loggedIn } = this.props
     return (
       <div className='App'>
         {/* { loggedIn ? <LoginContainer currentUser={this.props.currentUser} /> : <HomeContainer />} */}
@@ -44,9 +44,10 @@ class App extends Component {
 
 const mapStateToProps = state => {
   return ({
-    loggedIn: !!state.currentUser
+    loggedIn: !!state.currentUser,
     // currentUser: state.currentUser
   })
 }
 
 export default connect(mapStateToProps, { getCurrentUser })(App);
+// export default App;

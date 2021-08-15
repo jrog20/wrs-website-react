@@ -8,7 +8,7 @@ import { updateLoginForm } from "../actions/loginForm.js";
 import { login, logout } from "../actions/currentUser.js"
 
 // import { login, getCurrentUser } from "../actions/currentUser.js";
-import rogerriding from '../assets/images/rogerriding.jpeg';
+// import rogerriding from '../assets/images/rogerriding.jpeg';
 
 const LoginContainer = ({ loginFormData, updateLoginForm, login, history, currentUser, loggedIn }) => {
 
@@ -29,21 +29,20 @@ const LoginContainer = ({ loginFormData, updateLoginForm, login, history, curren
     // Submit info from the form to the backend to authenticate
     // the user and, if valid, send the user back to the front end.
     // With the response, set the state.
-    login(loginFormData, history)
+    login(loginFormData)
   }
     console.log(loginFormData)
-
   return (
     <div>
-      'Welcome Roger' OR 'Not logged in' = 
+      {/* 'Welcome Roger' OR 'Not logged in' =  */}
       <h3> 
         { currentUser ? `Welcome, ${currentUser.username}!` : 'Not logged in'}
       </h3>
-      Post component OR 'Not logged in' = 
+      {/* Post component OR 'Please Log In' =  */}
       <h3>
-        { currentUser ? "Add Post Form here" : 'Not logged in'}
+        { currentUser ? "Add Post Form here" : 'Please Log In'}
       </h3>
-      If logged in = Logout component. If not logged in = Login component.
+      {/* If logged in = Logout component. If not logged in = Login component. */}
       {
         currentUser ? 
         <Logout logout={logout}/> 
@@ -51,13 +50,14 @@ const LoginContainer = ({ loginFormData, updateLoginForm, login, history, curren
         <Login 
           handleOnChange={handleOnChange} 
           handleOnSubmit={handleOnSubmit} 
-          email={loginFormData.email} 
+          email={loginFormData.email}
           password={loginFormData.password}
+          // username={loginFormData.username}
         />
       }
       {/* <Login /> */}
       {/* COMMENTED OUT FOR NOW... */}
-      <div className='background-image' style={{ backgroundImage: `url(${rogerriding})` }} alt="Login">
+      {/* <div className='background-image' style={{ backgroundImage: `url(${rogerriding})` }} alt="Login">
         <form onSubmit={handleOnSubmit}>
           <input 
             type="text" 
@@ -65,9 +65,9 @@ const LoginContainer = ({ loginFormData, updateLoginForm, login, history, curren
             placeholder="email" 
             value={loginFormData.email}
             onChange={handleOnChange}
-          /><br/>
+          /><br/> */}
           {/* change back to type='password' for production */}
-          <input 
+          {/* <input 
             type="text" 
             name="password" 
             placeholder="password" 
@@ -79,7 +79,7 @@ const LoginContainer = ({ loginFormData, updateLoginForm, login, history, curren
             value="Login"
           />
         </form>
-      </div>
+      </div> */}
     </div>
   );
 }
