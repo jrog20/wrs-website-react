@@ -8,6 +8,8 @@ import Contact from './components/Contact';
 import LoginContainer from './containers/LoginContainer';
 import NotFound from './components/NotFound';
 import Footer from './components/Footer';
+import Posts from './components/Posts';
+
 // Switch allows only one route to show at a time
 import { Switch, Route } from 'react-router-dom';
 
@@ -33,6 +35,7 @@ class App extends Component {
           <Route exact path="/about" component={About} />
           <Route exact path="/services" component={Services} />
           <Route exact path="/contact" component={Contact} />
+          <Route exact path="/posts" component={Posts} />
           <Route exact path="/login" component={LoginContainer} />
           <Route component={NotFound} />
         </Switch>
@@ -45,7 +48,7 @@ class App extends Component {
 const mapStateToProps = state => {
   return ({
     loggedIn: !!state.currentUser,
-    // currentUser: state.currentUser
+    currentUser: state.currentUser
   })
 }
 

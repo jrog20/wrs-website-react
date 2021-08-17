@@ -29,6 +29,12 @@ function Cards() {
               label='Contact'
               path='/contact'
             />
+            <CardItem
+              src='images/rainbow.jpeg'
+              text='Posts'
+              label='Posts'
+              path='/posts'
+            />
           </ul>
         </div>
       </div>

@@ -2,6 +2,8 @@ import React from 'react';
 import { connect } from 'react-redux';
 import Login from '../components/Login';
 import Logout from '../components/Logout';
+import PostsContainer from './PostsContainer';
+
 // import { getCurrentUser } from '../actions/currentUser.js';
 // NEW
 import { updateLoginForm } from "../actions/loginForm.js";
@@ -40,7 +42,7 @@ const LoginContainer = ({ loginFormData, updateLoginForm, login, history, curren
       </h3>
       {/* Post component OR 'Please Log In' =  */}
       <h3>
-        { currentUser ? "Add Post Form here" : 'Please Log In'}
+        { currentUser ? <PostsContainer /> : 'Please Log In'}
       </h3>
       {/* If logged in = Logout component. If not logged in = Login component. */}
       {
