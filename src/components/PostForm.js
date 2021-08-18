@@ -41,6 +41,7 @@ class PostForm extends Component {
       body: formData
     })
     .catch(error=>console.log(error));
+    console.log(formData);
   }
   
   render () {
@@ -83,7 +84,15 @@ class PostForm extends Component {
           />
         </form>
         <p>Testing Rendering 'Posts' component info here: </p>
-          <p><img src={props.post.images.url}/></p>
+        <p>New Post</p>
+          <p>Title: {this.state.title} </p>
+          <p>Body: {this.state.body} </p>
+          <p>{this.state.images.url} ?
+            <img src={this.state.images.url} alt="wrs post"/> : 
+            "No image available" 
+          </p>
+          {/* <p>if({this.state.images.url}) </p> */}
+
       </div>
     )
   }
