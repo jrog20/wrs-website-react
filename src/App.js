@@ -27,7 +27,7 @@ class App extends Component {
   render() {
     // const { loggedIn } = this.props
     return (
-      <div className='App'>
+      <div>
         {/* { loggedIn ? <LoginContainer currentUser={this.props.currentUser} /> : <HomeContainer />} */}
         <NavBar />
         <Switch>
