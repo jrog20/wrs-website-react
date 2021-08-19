@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 
-
 // This component should stay in React. No need for Redux
 class PostForm extends Component {
 
@@ -11,12 +10,14 @@ class PostForm extends Component {
       body: '',
       date: '',
       tags: [],
-      categories: [],
+      categories: ['Cat1', 'Cat2', 'Cat3', 'Cat4'],
       // for one image = image: null
       // for multiple images, should it be an empty array?
       images: []
     }
+    console.log(this.state);
   }
+
 
   handleChange = event => {
     this.setState({ [event.target.name]: event.target.value });
@@ -45,6 +46,7 @@ class PostForm extends Component {
   }
   
   render () {
+    console.log(this.state);
     return (
       <div className="Post">
         <form onSubmit={this.handleSubmit} >
@@ -55,9 +57,9 @@ class PostForm extends Component {
             placeholder="Title" 
             onChange={this.handleChange}
           /><br/>
-          <label>Post Information: </label>
-          <input 
-            type="text" 
+          <label>Post Description: </label>
+          <textarea 
+            type="textarea" 
             name="body" 
             placeholder="Post Text" 
             onChange={this.handleChange}
@@ -77,7 +79,12 @@ class PostForm extends Component {
             multiple={true} 
             onChange={this.onImageChange} 
           /><br/>
-          {/* Can add categories and tags here later */}
+          {/* Can add categories (10 or less options) and tags here later */}
+          {/* <label>
+            Select all appropriate categories: 
+          </label>
+            <select multiple={true} value={this.state.categories} onChange={this.handleChange}></select> */}
+          <br></br>
           <input 
             type="submit" 
             value="Submit" 
@@ -91,8 +98,8 @@ class PostForm extends Component {
             <img src={this.state.images.url} alt="wrs post"/> : 
             "No image available" 
           </p>
+          <img src={this.state.images[0]} alt="wrs post"/>
           {/* <p>if({this.state.images.url}) </p> */}
-
       </div>
     )
   }
