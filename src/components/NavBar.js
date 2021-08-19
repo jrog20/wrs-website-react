@@ -61,6 +61,17 @@ function Navbar() {
                 Services
               </Link>
             </li>
+            {/* IF we add this link to the nav bar (do we want this on top?)
+            Will need to adjust css so all links show correctly in nav bar */}
+            {/* <li className='nav-item'>
+              <Link
+                to='/posts'
+                className='nav-links'
+                onClick={closeMobileMenu}
+              >
+                Posts
+              </Link>
+            </li> */}
             <li className='nav-item'>
               <Link
                 to='/contact'
