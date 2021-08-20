@@ -9,7 +9,7 @@ class PostForm extends Component {
       title: '',
       body: '',
       date: '',
-      tags: ['Tag1', 'Tag2', 'Tag3', 'Tag4'],
+      tags: [],
       categories: [],
       // for one image = image: null
       // for multiple images, should it be an empty array?
@@ -29,19 +29,23 @@ class PostForm extends Component {
 
   handleSubmit = event => {
     event.preventDefault();
-    const formData = new FormData();
-    formData.append('title', this.state.title);
-    formData.append('body', this.state.body);
-    formData.append('date', this.state.date);
-    formData.append('tags', this.state.tags);
-    formData.append('categories', this.state.categories);
-    formData.append('images', this.state.images);
+    // const formData = new FormData();
+    // formData.append('title', this.state.title);
+    // formData.append('body', this.state.body);
+    // formData.append('date', this.state.date);
+    // formData.append('tags', this.state.tags);
+    // formData.append('categories', this.state.categories);
+    // formData.append('images', this.state.images);
+    console.log('State:', this.state);
     fetch('http://localhost:3001/posts', {
       method: 'POST',
-      body: formData
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+      },
+      body: JSON.stringify({post: this.state})
     })
     .catch(error=>console.log(error));
-    console.log(formData);
   }
 
   handleCatChange = (e) => {
@@ -83,7 +87,7 @@ class PostForm extends Component {
             multiple={true} 
             onChange={this.onImageChange} 
           /><br/>
-          {/* Can add categories (10 or less options) and tags here later */}
+          {/* Add Categories (10 or less options) and Tags here later */}
           <label>
             Select all appropriate categories: 
           </label>
