@@ -9,15 +9,14 @@ class PostForm extends Component {
       title: '',
       body: '',
       date: '',
-      tags: [],
-      categories: ['Cat1', 'Cat2', 'Cat3', 'Cat4'],
+      tags: ['Tag1', 'Tag2', 'Tag3', 'Tag4'],
+      categories: [],
       // for one image = image: null
       // for multiple images, should it be an empty array?
       images: []
     }
     console.log(this.state);
   }
-
 
   handleChange = event => {
     this.setState({ [event.target.name]: event.target.value });
@@ -43,6 +42,11 @@ class PostForm extends Component {
     })
     .catch(error=>console.log(error));
     console.log(formData);
+  }
+
+  handleCatChange = (e) => {
+    let value = Array.from(e.target.selectedOptions, option => option.value);
+    this.setState({categories: value});
   }
   
   render () {
@@ -80,10 +84,19 @@ class PostForm extends Component {
             onChange={this.onImageChange} 
           /><br/>
           {/* Can add categories (10 or less options) and tags here later */}
-          {/* <label>
+          <label>
             Select all appropriate categories: 
           </label>
-            <select multiple={true} value={this.state.categories} onChange={this.handleChange}></select> */}
+            <select 
+              multiple={true} 
+              name='categories'
+              value={this.state.value} 
+              onChange={this.handleCatChange}>
+              <option value='Cat1'>Cat1</option>
+              <option value='Cat2'>Cat2</option>
+              <option value='Cat3'>Cat3</option>
+              <option value='Cat4'>Cat4</option>
+            </select>
           <br></br>
           <input 
             type="submit" 
