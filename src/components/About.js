@@ -1,11 +1,11 @@
 import React from 'react';
-import driving2012 from '../assets/images/rainbow.jpeg';
+import haying2 from '../assets/images/haying2.jpeg';
 import Bios from './Bios';
 
 function About() {
   return (
     <>
-      <div className='background-image' style={{ backgroundImage: `url(${driving2012})` }} alt="Horse">
+      <div className='background-image' style={{ backgroundImage: `url(${haying2})` }} alt="Horse">
       </div>
       <Bios />
     </>

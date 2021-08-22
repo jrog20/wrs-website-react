@@ -3,8 +3,8 @@ import studentjumping from '../assets/images/studentjumping.jpeg';
 
 function Services() {
   return (
-    <>
-      <div className='background-image' style={{ backgroundImage: `url(${studentjumping})` }} alt="Horse">
+    <div>
+      <div className='background-image' style={{ backgroundImage: `url(${studentjumping})` }} alt="Horse"></div>
       {/* Need to add images, styling, and more info/text to this page */}
       <h1>Services Offered</h1>
         <h2>Boarding</h2>
@@ -28,8 +28,7 @@ function Services() {
             The resulting effect is the body understanding, energizing and communicating with great clarity.     
         <h2>Training</h2>
           <h3>Roger provides training of horses in Riding, Jumping and Driving.</h3>
-      </div>
-    </>
+    </div>
   );
 };
 
