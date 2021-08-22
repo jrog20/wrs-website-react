@@ -10,7 +10,13 @@ class PostForm extends Component {
       body: '',
       date: '',
       tags: [],
-      categories: [],
+      categories: [
+        { name: 'Category 1', id: 'cat1'},
+        { name: 'Category 2', id: 'cat2'},
+        { name: 'Category 3', id: 'cat3'},
+        { name: 'Category 4', id: 'cat4'},
+      ],
+        // , 'cat2', 'cat3', 'cat4'],
       // for one image = image: null
       // for multiple images, should it be an empty array?
       images: []
@@ -44,6 +50,7 @@ class PostForm extends Component {
         'Accept': 'application/json'
       },
       body: JSON.stringify({post: this.state})
+      // body: formData
     })
     .catch(error=>console.log(error));
   }
@@ -52,11 +59,24 @@ class PostForm extends Component {
     let value = Array.from(e.target.selectedOptions, option => option.value);
     this.setState({categories: value});
   }
+
+  handleTagChange = (e) => {
+    let value = Array.from(e.target.selectedOptions, option => option.value);
+    this.setState({tags: value});
+  }
   
   render () {
     console.log(this.state);
+
+    // const {categories} = this.state.categories
+    let categoriesList = this.state.categories.length > 0 && this.state.categories.map((item, i) => {
+      return (
+        <option key={i} value={item.id}>{item.name}</option>
+      )
+    }, this)
+
     return (
-      <div className="Post">
+      <div className="cards">
         <form onSubmit={this.handleSubmit} >
           <label>Post Title: </label>
           <input 
@@ -96,10 +116,28 @@ class PostForm extends Component {
               name='categories'
               value={this.state.value} 
               onChange={this.handleCatChange}>
+              {/* Third option */}
+              {/* {categoriesList} */}
+
+              {/* First option */}
               <option value='Cat1'>Cat1</option>
               <option value='Cat2'>Cat2</option>
               <option value='Cat3'>Cat3</option>
               <option value='Cat4'>Cat4</option>
+            </select>
+          <br></br>
+          <label>
+            Select all appropriate Tags: 
+          </label>
+            <select 
+              multiple={true} 
+              name='tags'
+              value={this.state.value} 
+              onChange={this.handleTagChange}>
+              <option value='Tag1'>Tag1</option>
+              <option value='Tag2'>Tag2</option>
+              <option value='Tag3'>Tag3</option>
+              <option value='Tag4'>Tag4</option>
             </select>
           <br></br>
           <input 
@@ -111,11 +149,11 @@ class PostForm extends Component {
         <p>New Post</p>
           <p>Title: {this.state.title} </p>
           <p>Body: {this.state.body} </p>
-          <p>{this.state.images.url} ?
+          {/* <p>{this.state.images.url} ?
             <img src={this.state.images.url} alt="wrs post"/> : 
             "No image available" 
           </p>
-          <img src={this.state.images[0]} alt="wrs post"/>
+          <img src={this.state.images[0]} alt="wrs post"/> */}
           {/* <p>if({this.state.images.url}) </p> */}
       </div>
     )
