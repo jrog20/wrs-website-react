@@ -107,7 +107,6 @@ class PostForm extends Component {
             multiple={true} 
             onChange={this.onImageChange} 
           /><br/>
-          {/* Add Categories (10 or less options) and Tags here later */}
           <label>
             Select all appropriate categories: 
           </label>
