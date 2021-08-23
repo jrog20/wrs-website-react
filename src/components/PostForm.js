@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
-import Posts from './Posts';
 
-// This component should stay in React. No need for Redux
 class PostForm extends Component {
 
   constructor(props) {
@@ -11,13 +9,7 @@ class PostForm extends Component {
       body: '',
       date: '',
       tags: [],
-      categories: [
-        { name: 'Category 1', id: 'cat1'},
-        { name: 'Category 2', id: 'cat2'},
-        { name: 'Category 3', id: 'cat3'},
-        { name: 'Category 4', id: 'cat4'},
-      ],
-        // , 'cat2', 'cat3', 'cat4'],
+      categories: [],
       // for one image = image: null
       // for multiple images, should it be an empty array?
       images: []
@@ -154,9 +146,6 @@ class PostForm extends Component {
             value="Submit" 
           />
         </form>
-
-        <p>Testing Rendering 'Posts' component info here: </p>
-        <Posts props={this.state}/> 
 
         <p>This is still the Post Form component: </p>
         <p>New Post</p>
