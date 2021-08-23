@@ -31,7 +31,7 @@ function Cards() {
             />
             <CardItem
               src='images/rainbow.jpeg'
-              text='Posts'
+              text='Posts about our history and events'
               label='Posts'
               path='/posts'
             />
