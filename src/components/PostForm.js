@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Posts from './Posts';
 
 // This component should stay in React. No need for Redux
 class PostForm extends Component {
@@ -30,31 +31,40 @@ class PostForm extends Component {
 
   // Do I need to change this for multiple images entered for one post?
   onImageChange = event => { 
+    console.log('onImageChange:', event.target.files[0])
     this.setState({ images: event.target.files[0] });
   };
 
   handleSubmit = event => {
     event.preventDefault();
-    // const formData = new FormData();
-    // formData.append('title', this.state.title);
-    // formData.append('body', this.state.body);
-    // formData.append('date', this.state.date);
-    // formData.append('tags', this.state.tags);
-    // formData.append('categories', this.state.categories);
-    // formData.append('images', this.state.images);
+    const formData = new FormData();
+    formData.append('title', this.state.title);
+    formData.append('body', this.state.body);
+    formData.append('date', this.state.date);
+    formData.append('tags', this.state.tags);
+    formData.append('categories', this.state.categories);
+    formData.append('images', this.state.images);
     console.log('State:', this.state);
     fetch('http://localhost:3001/posts', {
       method: 'POST',
       headers: {
-        'Content-Type': 'application/json',
-        'Accept': 'application/json'
+        // 'Content-Type': 'multipart/form-data'
+        // 'Accept': 'application/json'
       },
-      body: JSON.stringify({post: this.state})
-      // body: formData
+      // body: JSON.stringify({post: this.state})
+      body: formData
     })
     .catch(error=>console.log(error));
+    // directToPosts()
   }
 
+  // directToPosts = () => {
+  //   fetch('http://localhost:3001/posts', {
+  //     method: 'GET',
+  //   })
+  //   .catch(error=>console.log(error));
+  // }
+  
   handleCatChange = (e) => {
     let value = Array.from(e.target.selectedOptions, option => option.value);
     this.setState({categories: value});
@@ -144,15 +154,24 @@ class PostForm extends Component {
             value="Submit" 
           />
         </form>
+
         <p>Testing Rendering 'Posts' component info here: </p>
+        <Posts props={this.state}/> 
+
+        <p>This is still the Post Form component: </p>
         <p>New Post</p>
           <p>Title: {this.state.title} </p>
           <p>Body: {this.state.body} </p>
-          {/* <p>{this.state.images.url} ?
+          {/* <p>{this.state.images[0].url}</p> */}
+          {/* {rails_blob_url(@post.images[0]} */}
+{/* in Rails console during session: rails_blob_url(@post.images[0]) */}
+{/* gave: "http://localhost:3001/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCdz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--dcb988b40f2d12c58d3e06e03095026bb4d6e2da/fallhill.jpeg" */}
+
+          <p>{this.state.images.url} ?
             <img src={this.state.images.url} alt="wrs post"/> : 
             "No image available" 
           </p>
-          <img src={this.state.images[0]} alt="wrs post"/> */}
+          {/* <img src={this.state.images[0]} alt="wrs post"/>  */}
           {/* <p>if({this.state.images.url}) </p> */}
       </div>
     )
