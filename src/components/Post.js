@@ -8,6 +8,7 @@ class Post extends React.Component {
         <h2>Title: {this.props.post.title}</h2>
         <h3>Date: {this.props.post.date}</h3>
         <p>Body: {this.props.post.body}</p>
+        <p>{this.props.post.categories ? this.props.post.categories : null }</p>
       </div>
     )
   }
