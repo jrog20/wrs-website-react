@@ -34,14 +34,6 @@ class PostsContainer extends Component {
   render() {
     return <div>{this.postCards()}</div>
   }
-
-  // render() {
-  //   return (
-  //     <div>
-  //       <p>{this.state.posts.map(post => post.title)}</p>
-  //     </div>
-  //   );
-  // }
 }
 
 // const mapStateToProps = state => {

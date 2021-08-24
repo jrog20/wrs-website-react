@@ -40,22 +40,12 @@ class PostForm extends Component {
     fetch('http://localhost:3001/posts', {
       method: 'POST',
       headers: {
-        // 'Content-Type': 'multipart/form-data'
-        // 'Accept': 'application/json'
+
       },
-      // body: JSON.stringify({post: this.state})
       body: formData
     })
     .catch(error=>console.log(error));
-    // directToPosts()
   }
-
-  // directToPosts = () => {
-  //   fetch('http://localhost:3001/posts', {
-  //     method: 'GET',
-  //   })
-  //   .catch(error=>console.log(error));
-  // }
   
   handleCatChange = (e) => {
     let value = Array.from(e.target.selectedOptions, option => option.value);
@@ -69,14 +59,6 @@ class PostForm extends Component {
   
   render () {
     console.log(this.state);
-
-    // const {categories} = this.state.categories
-    let categoriesList = this.state.categories.length > 0 && this.state.categories.map((item, i) => {
-      return (
-        <option key={i} value={item.id}>{item.name}</option>
-      )
-    }, this)
-
     return (
       <div className="cards">
         <form onSubmit={this.handleSubmit} >
@@ -117,10 +99,6 @@ class PostForm extends Component {
               name='categories'
               value={this.state.value} 
               onChange={this.handleCatChange}>
-              {/* Third option */}
-              {/* {categoriesList} */}
-
-              {/* First option */}
               <option value='Cat1'>Cat1</option>
               <option value='Cat2'>Cat2</option>
               <option value='Cat3'>Cat3</option>
@@ -146,22 +124,6 @@ class PostForm extends Component {
             value="Submit" 
           />
         </form>
-
-        <p>This is still the Post Form component: </p>
-        <p>New Post</p>
-          <p>Title: {this.state.title} </p>
-          <p>Body: {this.state.body} </p>
-          {/* <p>{this.state.images[0].url}</p> */}
-          {/* {rails_blob_url(@post.images[0]} */}
-{/* in Rails console during session: rails_blob_url(@post.images[0]) */}
-{/* gave: "http://localhost:3001/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCdz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--dcb988b40f2d12c58d3e06e03095026bb4d6e2da/fallhill.jpeg" */}
-
-          <p>{this.state.images.url} ?
-            <img src={this.state.images.url} alt="wrs post"/> : 
-            "No image available" 
-          </p>
-          {/* <img src={this.state.images[0]} alt="wrs post"/>  */}
-          {/* <p>if({this.state.images.url}) </p> */}
       </div>
     )
   }
