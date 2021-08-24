@@ -1,10 +1,16 @@
 import React from 'react';
 
-const Post = ({ title }) => (
-  <div>
-    {/* <img src={ img_url } alt={title}/> */}
-    <h3>{ title }</h3>
-  </div>
-)
- 
+class Post extends React.Component {
+  render() {
+    return (
+      // <div key={post.id}>
+      <div>
+        <h2>Title: {this.props.post.title}</h2>
+        <h2>Date: {this.props.post.date}</h2>
+        <p>Body: {this.props.post.body}</p>
+      </div>
+    )
+  }
+}
+
 export default Post;

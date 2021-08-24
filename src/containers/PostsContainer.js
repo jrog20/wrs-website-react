@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 // import { connect } from 'react-redux'
-import PostForm from '../components/PostForm';
-import Posts from '../components/Posts';
+// import PostForm from '../components/PostForm';
+import Post from '../components/Post';
+
 
 class PostsContainer extends Component {
 
@@ -17,38 +18,30 @@ class PostsContainer extends Component {
     fetch('http://localhost:3001/posts')
       .then(response => response.json())
       .then(postData => {
+        console.log(postData)
         this.setState({
-          posts: postData.posts
+          posts: postData
         })
       })
   }
 
-  // componentDidMount() {
-  //   fetch('http://localhost:3001/posts', {
-  //     method: 'GET',
-  //     // headers: {
-  //       // 'Content-Type': 'multipart/form-data'
-  //       // 'Accept': 'application/json'
-  //     // },
-  //     // body: JSON.stringify({post: this.state})
-  //     // body: postData
-  //   })
-  //   .then(postData => this.setState({ posts: postData.posts }))
-  //   .catch(error=>console.log(error));
-  //   // fetch('http://localhost:3001/posts')
-  //   //   .then(response => response.json())
-  //   //   .then(postData => this.setState({ posts: postData.posts }))
-  // }
+  postCards = () => {
+    return this.state.posts.map((post) => {
+      return <Post post={post} key={post.id} />
+    })
+  }
 
   render() {
-    return (
-      <div>
-        <PostForm />
-        <p>RENDER POSTS COMPONENT HERE - AND ADD ABILITY TO DELETE A POST</p>
-        <Posts posts={this.state.posts} />
-      </div>
-    );
+    return <div>{this.postCards()}</div>
   }
+
+  // render() {
+  //   return (
+  //     <div>
+  //       <p>{this.state.posts.map(post => post.title)}</p>
+  //     </div>
+  //   );
+  // }
 }
 
 // const mapStateToProps = state => {
