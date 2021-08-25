@@ -38,11 +38,12 @@ function Navbar() {
             {click ? <FaTimes /> : <FaBars />}
           </div>
           <ul className={click ? 'nav-menu active' : 'nav-menu'}>
-            <li className='nav-item'>
+            {/* Removing home link for now; need to add back later */}
+            {/* <li className='nav-item'>
               <Link to='/' className='nav-links' onClick={closeMobileMenu}>
                 Home
               </Link>
-            </li>
+            </li> */}
             <li className='nav-item'>
               <Link
                 to='/about'
@@ -63,7 +64,7 @@ function Navbar() {
             </li>
             {/* IF we add this link to the nav bar (do we want this on top?)
             Will need to adjust css so all links show correctly in nav bar */}
-            {/* <li className='nav-item'>
+            <li className='nav-item'>
               <Link
                 to='/posts'
                 className='nav-links'
@@ -71,7 +72,7 @@ function Navbar() {
               >
                 Posts
               </Link>
-            </li> */}
+            </li>
             <li className='nav-item'>
               <Link
                 to='/contact'
