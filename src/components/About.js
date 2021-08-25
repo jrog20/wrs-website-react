@@ -7,7 +7,22 @@ function About() {
     <>
       <div className='background-image' style={{ backgroundImage: `url(${haying2})` }} alt="Horse">
       </div>
-      <Bios />
+      <div>
+        <h2>Our Mission:</h2>
+        <p>Need content...</p>
+      </div>
+      <div>
+        <h2>Our Story:</h2>
+        <p>Need content...</p>
+      </div>
+      <div>
+        <h2>Our History:</h2>
+        <p>Need content...</p>
+      </div>
+      <div>
+        <h2>Bios:</h2>
+        <p><Bios /></p>
+      </div>
     </>
   );
 };
