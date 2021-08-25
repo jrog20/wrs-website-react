@@ -6,22 +6,16 @@ import About from './components/About';
 import Services from './components/Services';
 import Contact from './components/Contact';
 import LoginContainer from './containers/LoginContainer';
-import NotFound from './components/NotFound';
-import Footer from './components/Footer';
 import PostsContainer from './containers/PostsContainer';
-
-// import Posts from './components/Posts';
-
+import Footer from './components/Footer';
+import NotFound from './components/NotFound';
+import { connect } from 'react-redux';
+import { getCurrentUser } from "./actions/currentUser.js"
 // Switch allows only one route to show at a time
 import { Switch, Route } from 'react-router-dom';
 
-// ADDED
-import { getCurrentUser } from "./actions/currentUser.js"
-import { connect } from 'react-redux';
-
 class App extends Component {
   
-  // ADDED
   componentDidMount() {
     this.props.getCurrentUser()
   }
@@ -30,7 +24,7 @@ class App extends Component {
     // const { loggedIn } = this.props
     return (
       <div>
-        {/* { loggedIn ? <LoginContainer currentUser={this.props.currentUser} /> : <HomeContainer />} */}
+        {/* { loggedIn ? <LoginContainer currentUser={this.props.currentUser} /> : null} */}
         <NavBar />
         <Switch>
           <Route exact path="/" component={HomeContainer} />
@@ -55,4 +49,3 @@ const mapStateToProps = state => {
 }
 
 export default connect(mapStateToProps, { getCurrentUser })(App);
-// export default App;
