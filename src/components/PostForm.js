@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './Posts.css'
 
 class PostForm extends Component {
 
@@ -60,7 +61,7 @@ class PostForm extends Component {
   render () {
     console.log(this.state);
     return (
-      <div className="cards">
+      <div className="post-form-container">
         <form onSubmit={this.handleSubmit} >
           <label>Post Title: </label>
           <input 
@@ -68,21 +69,21 @@ class PostForm extends Component {
             name="title" 
             placeholder="Title" 
             onChange={this.handleChange}
-          /><br/>
+          />
           <label>Post Description: </label>
           <textarea 
             type="textarea" 
             name="body" 
             placeholder="Post Text" 
             onChange={this.handleChange}
-          /><br/>
-          <label>Date: </label>
+          />
+          <label>Post Date: </label>
           <input 
             type="text" 
             name="date" 
-            placeholder="Date" 
+            placeholder="Post Date" 
             onChange={this.handleChange}
-          /><br/>
+          />
           <label>Select an image to add to this Post: </label>
           <input 
             type="file" 
@@ -90,22 +91,47 @@ class PostForm extends Component {
             accept="image/*" 
             multiple={true} 
             onChange={this.onImageChange} 
-          /><br/>
+          />
           <label>
             Select all appropriate categories: 
           </label>
-            <select 
+          <select 
               multiple={true} 
               name='categories'
               value={this.state.value} 
               onChange={this.handleCatChange}>
-              <option value='Cat1'>Cat1</option>
-              <option value='Cat2'>Cat2</option>
-              <option value='Cat3'>Cat3</option>
-              <option value='Cat4'>Cat4</option>
+              <option value='shows'>shows</option>
+              <option value='clinics'>clinics</option>
+              <option value='camps'>camps</option>
+              <option value='training'>training</option>
+              <option value='other'>other</option>
             </select>
-          <br></br>
-          <label>
+          {/* <input
+            type='checkbox'
+            name='shows'
+
+          />
+          <input
+            type='checkbox'
+            name='clinics'
+            
+          />
+          <input
+            type='checkbox'
+            name='camps'
+            
+          />
+          <input
+            type='checkbox'
+            name='training'
+            
+          />
+          <input
+            type='checkbox'
+            name='other'
+            
+          /> */}
+          {/* <label>
             Select all appropriate Tags: 
           </label>
             <select 
@@ -118,7 +144,7 @@ class PostForm extends Component {
               <option value='Tag3'>Tag3</option>
               <option value='Tag4'>Tag4</option>
             </select>
-          <br></br>
+          <br></br> */}
           <input 
             type="submit" 
             value="Submit" 
