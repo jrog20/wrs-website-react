@@ -1,6 +1,6 @@
 import React from 'react';
 import haying2 from '../assets/images/haying2.jpeg';
-import Bios from './Bios';
+// import Bios from './Bios';
 
 function About() {
   return (
@@ -8,6 +8,8 @@ function About() {
       <div className='background-image' style={{ backgroundImage: `url(${haying2})` }} alt="Horse">
       </div>
       <div>
+        <h1>About Us:</h1>
+        <p>Nestled in the West River Valley, West River Stables is a full-service equestrian facility, owned and managed by Roger Poitras and Howard Osgood. English riding lessons are available for every level from beginners to advanced riders</p>
         <h2>Our Mission:</h2>
         <p>To land on Mars or discover a new planet.</p>
       </div>
