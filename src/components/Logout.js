@@ -1,16 +1,14 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { logout } from "../actions/currentUser"
+import './Login.css';
 
-const Logout = ({ logout, history }) => {
+const Logout = ({ logout }) => {
   return (
-    <div className="Logout">
-      {/* <form onSubmit={logout}> */}
-      {/* changed to this: */}
+    <div className="logout">
       <form onSubmit={(event) => {
         event.preventDefault()
         logout()
-        // history.push('/')
       }
       }>
         <input
