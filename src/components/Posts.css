@@ -1,0 +1,35 @@
+.post-container {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  width: 100vw;
+  justify-content: center;
+  margin: auto;
+}
+
+.post-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  max-width: 800px;
+  margin: auto;
+  background: #d9eaf5;
+  padding: 10px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+}
+
+.post-card img {
+  width: 100%;
+  max-height: 100%;
+  height: fit-content;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.post-image {
+  height: 500px;
+  width: 800px;
+}

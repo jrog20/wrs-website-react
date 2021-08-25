@@ -3,7 +3,6 @@ import React, { Component } from 'react';
 // import PostForm from '../components/PostForm';
 import Post from '../components/Post';
 
-
 class PostsContainer extends Component {
 
   constructor() {
@@ -32,7 +31,7 @@ class PostsContainer extends Component {
   }
 
   render() {
-    return <div>{this.postCards()}</div>
+    return <div className='post-container'>{this.postCards()}</div>
   }
 }
 
