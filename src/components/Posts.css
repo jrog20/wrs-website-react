@@ -1,3 +1,20 @@
+.post-form-container input, .post-form-container textarea, .post-form-container select {
+  display: block;
+  font-size: 1.2em;
+}
+
+.post-form-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  margin: 50px auto 50px auto;
+  max-width: 100%;
+  width: 500px;
+  border: 1px solid black;
+  padding: 10px;
+}
+
 .post-container {
   text-align: center;
   display: flex;
@@ -15,7 +32,7 @@
   align-content: center;
   max-width: 800px;
   margin: auto;
-  background: #d9eaf5;
+  background: rgb(203 223 249);
   padding: 10px;
   margin-bottom: 20px;
   border-radius: 10px;
