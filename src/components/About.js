@@ -9,19 +9,21 @@ function About() {
       </div>
       <div>
         <h2>Our Mission:</h2>
-        <p>Need content...</p>
+        <p>To land on Mars or discover a new planet.</p>
       </div>
       <div>
         <h2>Our Story:</h2>
-        <p>Need content...</p>
+        <p>Founded one million years ago by Dinosaurs. The Dinosaurs developed cows. Then they brought in the Osgood's to run the Dairy Farm.</p>
       </div>
       <div>
         <h2>Our History:</h2>
-        <p>Need content...</p>
+        <p>One day the Dairy Farm became the Horse Farm.</p>
       </div>
       <div>
         <h2>Bios:</h2>
-        <p><Bios /></p>
+        <p>Howard was born and raised on the farm, raised by the Dinosaurs. They taught him how to be one of the best hayers around.</p>
+        <p>Roger was born in a snowstorm in Canada. As a baby he sledded down from Canada to Westminster, VT. Then in the Spring he rode his horse to Brookline, VT.</p>
+        {/* <Bios /> */}
       </div>
     </>
   );
