@@ -1,13 +1,10 @@
 import React, { Component } from 'react';
-// import { connect } from 'react-redux'
-// import PostForm from '../components/PostForm';
 import Post from '../components/Post';
 
 class PostsContainer extends Component {
 
   constructor() {
     super()
- 
     this.state = {
       posts: []
     };
@@ -31,19 +28,12 @@ class PostsContainer extends Component {
   }
 
   render() {
-    return <div className='post-container'>{this.postCards()}</div>
+    return (
+      <div className='post-container'>
+        {this.postCards()}
+      </div>
+    )
   }
 }
 
-// const mapStateToProps = state => {
-//   return {
-//     posts: state.posts
-//   }
-// }
-
-// const mapDispatchToProps = dispatch => ({
-//   addPost: post => dispatch({ type: 'ADD_POST', post })
-// })
-
-// export default connect(mapStateToProps, mapDispatchToProps)(PostsContainer); 
 export default PostsContainer;
