@@ -21,10 +21,8 @@ class App extends Component {
   }
 
   render() {
-    // const { loggedIn } = this.props
     return (
       <div>
-        {/* { loggedIn ? <LoginContainer currentUser={this.props.currentUser} /> : null} */}
         <NavBar />
         <Switch>
           <Route exact path="/" component={HomeContainer} />
@@ -43,7 +41,6 @@ class App extends Component {
 
 const mapStateToProps = state => {
   return ({
-    loggedIn: !!state.currentUser,
     currentUser: state.currentUser
   })
 }
