@@ -64,9 +64,7 @@ export const login = (credentials) => {
   }
 }
 
-// NEED TO ADD LOGOUT ACTION HERE
-
-export const logout = event => {
+export const logout = () => {
   return dispatch => {
     dispatch(clearCurrentUser())
     return fetch("http://localhost:3001/logout", {
