@@ -4,12 +4,10 @@ import Login from '../components/Login';
 import Logout from '../components/Logout';
 import PostForm from '../components/PostForm';
 import PostsContainer from './PostsContainer';
-// import { getCurrentUser } from '../actions/currentUser.js';
 import { updateLoginForm } from "../actions/loginForm.js";
 import { login, logout } from "../actions/currentUser.js"
-// import { login, getCurrentUser } from "../actions/currentUser.js";
 
-const LoginContainer = ({ loginFormData, updateLoginForm, login, history, currentUser, loggedIn }) => {
+const LoginContainer = ({ loginFormData, updateLoginForm, login, currentUser }) => {
 
   const handleOnChange = event => {
     const { name, value } = event.target
@@ -18,7 +16,6 @@ const LoginContainer = ({ loginFormData, updateLoginForm, login, history, curren
         [name]: value
     }
     updateLoginForm(updatedFormInfo)
-    console.log(updatedFormInfo)
   }
   
   const handleOnSubmit = event => {
@@ -27,9 +24,6 @@ const LoginContainer = ({ loginFormData, updateLoginForm, login, history, curren
     // the user and, if valid, send the user back to the front end.
     // With the response, set the state.
     login(loginFormData)
-    // trying to redirect
-    // this.history.push('/posts'); 
-    console.log(loginFormData)
   }
 
   return (
