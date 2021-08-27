@@ -25,9 +25,9 @@ class PostsContainer extends Component {
 
   postCards = () => {
     return this.state.posts.map((post) => {
-      <Link key={post.id} to={`/posts/${post.id}`}>
-        <Post post={post} key={post.id} />
-      </Link>
+      // <Link key={post.id} to={`/posts/${post.id}`}>
+      //   <Post post={post} key={post.id} />
+      // </Link>
       return <Post post={post} key={post.id} />
     })
   }
