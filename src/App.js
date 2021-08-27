@@ -13,6 +13,7 @@ import { connect } from 'react-redux';
 import { getCurrentUser } from "./actions/currentUser.js"
 // Switch allows only one route to show at a time
 import { Switch, Route } from 'react-router-dom';
+import Post from './components/Post';
 
 class App extends Component {
   
@@ -31,6 +32,7 @@ class App extends Component {
           <Route exact path="/contact" component={Contact} />
           <Route exact path="/posts" component={PostsContainer} />
           <Route exact path="/login" component={LoginContainer} />
+          <Route exact path="/posts/:id" component={Post} />
           <Route component={NotFound} />
         </Switch>
         <Footer />

@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import Post from '../components/Post';
+import { Link } from 'react-router-dom';
+ 
 
 class PostsContainer extends Component {
 
@@ -23,6 +25,9 @@ class PostsContainer extends Component {
 
   postCards = () => {
     return this.state.posts.map((post) => {
+      <Link key={post.id} to={`/posts/${post.id}`}>
+        <Post post={post} key={post.id} />
+      </Link>
       return <Post post={post} key={post.id} />
     })
   }
