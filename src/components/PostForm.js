@@ -35,7 +35,7 @@ class PostForm extends Component {
     formData.append('body', this.state.body);
     formData.append('date', this.state.date);
     formData.append('tags', JSON.stringify(this.state.tags));
-    formData.append('categories', JSON.stringify(this.state.categories));
+    formData.append('categories', this.state.categories);
     formData.append('images', this.state.images);
     console.log('State:', this.state);
     fetch('http://localhost:3001/posts', {
