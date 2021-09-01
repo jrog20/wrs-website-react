@@ -5,6 +5,15 @@
   font-family: 'PT Sans', sans-serif;
 }
 
+.flex-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: stretch;
+  text-align: center;
+}
+
 .home,
 .about,
 .services,
