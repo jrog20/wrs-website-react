@@ -26,7 +26,6 @@
 }
 
 .about {
-  /* background-image: url('/images/lessoninfall.jpg'); */
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -35,7 +34,6 @@
 }
 
 .services {
-  /* background-image: url('/images/studentjumping.jpg'); */
   background-position: center;
   background-size: fill;
   background-repeat: no-repeat;
@@ -44,7 +42,6 @@
 }
 
 .contact {
-  /* background-image: url('/assets/images/youngstudentshowing.jpg'); */
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -56,4 +53,16 @@
   height: 500px;
   background-size: cover;
   background-position: center;
+}
+
+.about-image {
+  background-image: url('assets/images/haying2.jpeg');
+}
+
+.services-image {
+  background-image: url('assets/images/studentjumping.jpeg');
+}
+
+.contact-image {
+  background-image: url('assets/images/youngstudentshowing.jpeg');
 }

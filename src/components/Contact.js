@@ -1,10 +1,9 @@
 import React from 'react';
-import youngstudentshowing from '../assets/images/youngstudentshowing.jpeg';
 
 function Contact() {
   return (
     <>
-      <div className='background-image resize-image' style={{ backgroundImage: `url(${youngstudentshowing})` }} alt="Horse">
+      <div className='background-image resize-image contact-image'>
       </div>
       <h1>Contact Us</h1>
       <div className='flex-container'>

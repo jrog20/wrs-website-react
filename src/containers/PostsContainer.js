@@ -23,12 +23,15 @@ class PostsContainer extends Component {
       })
   }
 
+  handleEditClick = () => {
+    this.setState(prevState => 
+      ({ title: prevState.title 
+    })); 
+  }
+
   postCards = () => {
-    return this.state.posts.map((post) => {
-      // <Link key={post.id} to={`/posts/${post.id}`}>
-      //   <Post post={post} key={post.id} />
-      // </Link>
-      return <Post post={post} key={post.id} />
+    return this.state.posts.map(post => {
+      return <Post post={post} key={post.id} onClick={this.handleEditClick} />
     })
   }
 

@@ -1,10 +1,9 @@
 import React from 'react';
-import studentjumping from '../assets/images/studentjumping.jpeg';
 
 function Services() {
   return (
     <div>
-      <div className='background-image' style={{ backgroundImage: `url(${studentjumping})` }} alt="Horse"></div>
+      <div className='background-image services-image'></div>
       {/* Need to add images, styling, and more info/text to this page */}
       <h1>Services Offered</h1>
         <h2>Boarding</h2>
