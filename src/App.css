@@ -66,3 +66,8 @@
 .contact-image {
   background-image: url('assets/images/youngstudentshowing.jpeg');
 }
+
+.text-container {
+  padding: 50px;
+  text-align: center;
+}
